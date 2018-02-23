@@ -45,7 +45,7 @@ $router = new Router();
 Router::handle($method, $path, $handler);
 ```
 
-- `method` - `string` or `array`, **case-sensitive**, such as `GET`, `GET|POST`(split by `|`, without spaces), `['GET', 'POST']`
+- `method` - `string` or `array`, such as `GET`, `GET|POST`(split by `|`, without spaces), `['GET', 'POST']`
 - `path` - the path **MUST** start with slash `/`, such as `/`, `/users`, `/users/<username>`.
 - `handler` - `mixed`, whatever you want.
 
