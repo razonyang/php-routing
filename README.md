@@ -12,7 +12,7 @@ A fast, flexible and scalable HTTP router for PHP.
 
 - **Easy to design RESTful API**
 - **Full Tests**
-- **Flexible and scalable**: it allows you to define your own handler to deal with [`Not Found`](#not found handler), [`Method Not Allowed`](#method not allowed handler) and [`OPTIONS`](#options handler) request.
+- **Flexible and scalable**: it allows you to define your own handler to deal with [`Not Found`](#not-found-handler), [`Method Not Allowed`](#method-not-allowed-handler) and [`OPTIONS`](#options-handler) request.
 - **No third-party library dependencies**
 - **Named Param Placeholder**
 - **Detect all request methods of the specify path**
@@ -88,7 +88,7 @@ Router::dispatch($method, $path);
 - `method` - request method.
 - `path` - URI path.
 
-If matched, a [`Route`](route.php) instance will be returns, `null` otherwise or NotFoundException/MethodNotAllowedException will be thrown.
+If matched, a [`Route`](src/Route.php) instance will be returns, `null` otherwise or NotFoundException/MethodNotAllowedException will be thrown.
 
 ```php
 $path = '/users/baz';
@@ -133,7 +133,7 @@ $router->delete('/products/<product_id:\d+>', 'delete product');
 
 ### Not Found Handler
 
-```
+```php
 $router->notFoundHandler = function($method, $path) {
     throw new \Exception('404 Not Found');
 };
@@ -141,7 +141,7 @@ $router->notFoundHandler = function($method, $path) {
 
 ### Method Not Allowed Handler
 
-```
+```php
 $router->methodNotAllowedHandler = function($method, $path, $allowedMethods) {
     throw new \Exception('405 Method Not Allowed');
 };
@@ -149,13 +149,11 @@ $router->methodNotAllowedHandler = function($method, $path, $allowedMethods) {
 
 ### OPTIONS Handler
 
-```
+```php
 $router->optionsHandler = function($method, $path, $allowedMethods) {
     header('Allow: ' . implode(',', $allowedMethods));
 };
 ```
-
-### Custom
 
 ## FAQ
 
