@@ -25,7 +25,7 @@ A fast, flexible and scalable HTTP router for PHP.
 ## Install
 
 ```
-composer require razonyang/php-routing:0.1.0
+composer require razonyang/php-routing
 ```
 
 ## Documentation
